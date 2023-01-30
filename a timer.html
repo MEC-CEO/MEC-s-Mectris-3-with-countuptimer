@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+   <style type="text/css">
+      span {font-size: 100px; margin: 50px; color: #880}
+      body {font-size: 100px; margin: 50px; color: #088; background-color: black}
+   </style>
+  <title>timer</title>
+</head>
+<body>
+  <span id="minutes">00</span>:<span id="seconds">00</span>
+
+  <script>
+    const minutes = document.querySelector("#minutes")
+    const seconds = document.querySelector("#seconds")
+    let count = 0;
+
+    const renderTimer = () => {
+      count += 1;
+      minutes.innerHTML = Math.floor(count / 60).toString().padStart(2, "0");
+      seconds.innerHTML = (count % 60).toString().padStart(2, "0");
+    }
+
+    const timer = setInterval(renderTimer, 1000)
+  </script>
+</body>
+</html>
